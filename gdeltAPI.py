@@ -1,3 +1,6 @@
+"""
+module for working with GDELT API
+"""
 import json
 import urllib.request
 
@@ -5,6 +8,11 @@ baseURL = "https://api.gdeltproject.org/api/v2/doc/doc?query="
 
 
 def is_validLocation(loc):
+    """
+    Given country or city, checks whether such exists
+    :param loc: string
+    :return: bool
+    """
     with open("databases/countries.json", encoding="utf-8", errors="replace") as countries:
         for country in json.load(countries):
             if loc == country["country"].lower():
@@ -20,6 +28,10 @@ def is_validLocation(loc):
 
 
 def getLocation():
+    """
+    User interface for getting city or country
+    :return: string
+    """
     print("Please enter full country name (United States not USA or US) or city here")
     location = input(" ==> ").lower()
     while not is_validLocation(location):
@@ -33,10 +45,18 @@ def getLocation():
 
 
 def transQuery(query, mode="tonechart", themes=[None]):
+    """
+    Given city or country, display mode and themes returns generator of charts
+    :param query: string
+    :param mode: string
+    :param themes: list
+    :return: generator
+    """
     for theme in themes:
         tmp_theme = "theme:" + theme if theme else ""
         requestURL = baseURL + str(query if len(
-            query.split()) == 1 else '\"' + query + '\"') + "&mode=" + mode + "&format=json"
+            query.split()) == 1 else '\"' + query + '\"') + tmp_theme + "&mode=" + mode + \
+                     "&format=json"
         request_result = urllib.request.urlopen(requestURL).read().decode("utf-8")
         request_result = json.loads(request_result)
         yield request_result[mode]
