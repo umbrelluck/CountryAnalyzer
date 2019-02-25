@@ -54,15 +54,19 @@ def transQuery(query, mode="tonechart", themes=[None]):
     """
     for theme in themes:
         tmp_theme = "theme:" + theme if theme else ""
-        requestURL = baseURL + str(query if len(
-            query.split()) == 1 else '\"' + query + '\"') + tmp_theme + "&mode=" + mode + \
-                     "&format=json"
-        request_result = urllib.request.urlopen(requestURL).read().decode("utf-8")
+        while True:
+            requestURL = baseURL + '\"' + query + '\"' + tmp_theme + "&mode=" + mode + \
+                         "&format=json"
+            request_result = urllib.request.urlopen(requestURL).read().decode("utf-8")
+            if "phrase is too short" in request_result:
+                query += "%20" + query
+            else:
+                break
         request_result = json.loads(request_result)
         yield request_result[mode]
 
 
 if __name__ == "__main__":
     q = getLocation()
-    for elem in transQuery(q):
+    for elem in transQuery(q, themes=["war"]):
         print(elem)
