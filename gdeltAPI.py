@@ -52,6 +52,7 @@ def transQuery(query, mode="tonechart", themes=[None]):
     :param themes: list
     :return: generator
     """
+    query = query.replace(" ", "%20")
     for theme in themes:
         tmp_theme = "theme:" + theme if theme else ""
         while True:
@@ -63,10 +64,12 @@ def transQuery(query, mode="tonechart", themes=[None]):
             else:
                 break
         request_result = json.loads(request_result)
-        yield request_result[mode]
+        if mode == "tonechart":
+            yield request_result[mode]
+        else:
+            yield request_result["timeline"]
 
 
 if __name__ == "__main__":
-    q = getLocation()
-    for elem in transQuery(q, themes=["war"]):
+    for elem in transQuery("United States"):
         print(elem)
