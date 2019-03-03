@@ -73,8 +73,12 @@ def compareInterest(interest, loc, default, inter=False):
     count = 0
     for key, value in maxs.items():
         # CHANGE 5!!!!
-        if loc in value[0][0] and ((value[0][1] - value[1][1]) - (value[1][1] - value[2][1])) > 5:
-            count += 1
+        try:
+            if loc in value[0][0] and (
+                    (value[0][1] - value[1][1]) - (value[1][1] - value[2][1])) > 5:
+                count += 1
+        except IndexError:
+            continue
     if inter:
         return count / len(maxs)
     return count / len(maxs) > sum(default)

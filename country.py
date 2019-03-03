@@ -9,7 +9,6 @@ class Country:
     Basic implementation of a country with mood and interest
     """
     countries = []
-    best_stats = [0, 0, 0, 0]
 
     def __init__(self, name, negative, neutral, positive, interest):
         """
@@ -24,43 +23,46 @@ class Country:
         self.emotions = [negative, neutral, positive]
         self.interest = interest
         self.countries.append(self)
-        self.__update_stats([negative, neutral, positive], interest)
-
-    def __update_stats(self, mood, interest):
-        """
-        Update stats when country added
-        :param mood: tuple
-        :param interest: float
-        :return: None
-        """
-        for i in range(3):
-            self.best_stats[i] += mood[i]
-            self.best_stats[3] += interest
 
     def stable(self):
         """
         Calculate stable stats
         :return: list
         """
-        best_res = dict()
+        mood, inter = [0, 0, 0], 0
+        for country in self.countries:
+            for i in range(3):
+                mood[i] += country.emotions[i]
+            inter += country.interest
         length = len(self.countries)
-        best_res["mood"] = [elem / length for elem in self.best_stats]
-        best_res["interest"] = self.best_stats[3] / length
-        return best_res
+        return {"mood": list(map(lambda x: x / length, mood)), "interest": inter / length}
 
 
 #  CHANGE best_countries!!!!
-if __name__ == "__main__":
-    best_counties = ["Belgium", "United States"]
+def stability():
+    print("Pre-analyzing world, this can take up to 20 minutes...\n")
+    best_counties = ["Grenada", "Brunei", "Seychelles", "Kuwait", "Antigua and Barbuda",
+                     "Montenegro", "Greece", "Mongolia", "Trinidad and Tobago", "Oman", "Bulgaria",
+                     "Hungary", "Bahamas", "Panama", "Romania", "Croatia", "Barbados", "Qatar",
+                     "Argentina", "Latvia", "Italy", "Costa Rica", "Estonia",
+                     "United Arab Emirates", "Slovakia", "Poland", "Spain", "Chile", "Mauritius",
+                     "Lithuania", "Czech Republic", "United States", "Malta", "South Korea",
+                     "Uruguay", "Japan", "United Kingdom", "France", "Singapore", "Slovenia",
+                     "Belgium", "Portugal", "Austria", "Netherlands", "Germany", "Canada",
+                     "New Zealand", "Sweden", "Australia", "Luxembourg", "Ireland", "Iceland",
+                     "Denmark", "Switzerland", "Norway", "Finland"]
+    tmp = []
     for country in best_counties:
+        print(country + ": status - started", end="")
         neg, neu, pos = tone_chart(loc=country)
         interest = timeline_source_country(loc=country, inter=True)
+        tmp.append(interest)
         ct = Country(country, neg, neu, pos, interest)
-
-    base = ct.stable()["interest"], 0.01
-    print(ct.stable())
-    neg, neu, pos = tone_chart(loc="Russia")
-    print(neg, neu, pos)
-    interest = timeline_source_country(loc="Russia", base=base)
-    ct = Country("Russia", neg, neu, pos, interest)
-    print(ct.interest)
+        print("/DONE")
+    print("\nPre-analyzing completed. All data is collected. You are ready to start your search.\n")
+    return ct.stable()
+    # neg, neu, pos = tone_chart(loc="Ukraine")
+    # print(neg, neu, pos)
+    # base = res["interest"]
+    # interest = timeline_source_country(loc="Ukraine", base=(base, 0.1))
+    # print(interest)
