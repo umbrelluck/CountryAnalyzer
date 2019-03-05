@@ -1,7 +1,6 @@
 """
 Module with country class and functions to calculate stable stat
 """
-from helper import tone_chart, timeline_source_country
 
 
 class Country:
@@ -51,18 +50,11 @@ def stability():
                      "Belgium", "Portugal", "Austria", "Netherlands", "Germany", "Canada",
                      "New Zealand", "Sweden", "Australia", "Luxembourg", "Ireland", "Iceland",
                      "Denmark", "Switzerland", "Norway", "Finland"]
-    tmp = []
     for country in best_counties:
         print(country + ": status - started", end="")
         neg, neu, pos = tone_chart(loc=country)
         interest = timeline_source_country(loc=country, inter=True)
-        tmp.append(interest)
         ct = Country(country, neg, neu, pos, interest)
         print("/DONE")
     print("\nPre-analyzing completed. All data is collected. You are ready to start your search.\n")
     return ct.stable()
-    # neg, neu, pos = tone_chart(loc="Ukraine")
-    # print(neg, neu, pos)
-    # base = res["interest"]
-    # interest = timeline_source_country(loc="Ukraine", base=(base, 0.1))
-    # print(interest)

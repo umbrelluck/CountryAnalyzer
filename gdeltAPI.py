@@ -71,5 +71,6 @@ def transQuery(query, mode="tonechart", themes=[None]):
 
 
 if __name__ == "__main__":
-    for elem in transQuery("United States"):
-        print(elem)
+    tmp1 = [elem for elem in transQuery("United States")]
+    tmp2 = [elem for elem in transQuery("united states")]
+    print(tmp1 == tmp2)

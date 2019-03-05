@@ -4,6 +4,8 @@ Module provides easier collection of data and hides those ugly in-function calls
 import gdeltAPI
 import analyzer
 
+location = ""
+
 
 def tone_chart(loc=None):
     """
@@ -11,9 +13,10 @@ def tone_chart(loc=None):
     :param loc: str
     :return: tuple/list
     """
-    if loc is None:
-        loc = gdeltAPI.getLocation()
-    return analyzer.getInfo(gdeltAPI.transQuery(loc))
+    global location
+    if not location:
+        location = loc if loc else gdeltAPI.getLocation()
+    return analyzer.getInfo(gdeltAPI.transQuery(location))
 
 
 def timeline_source_country(loc=None, inter=False, base=(0, 0.1)):
@@ -24,8 +27,9 @@ def timeline_source_country(loc=None, inter=False, base=(0, 0.1)):
     :param base: list
     :return: bool/int
     """
-    if loc is None:
-        loc = gdeltAPI.getLocation()
+    global location
+    if not location:
+        location = loc if loc else gdeltAPI.getLocation()
     return analyzer.compareInterest(
-        analyzer.getInfo(gdeltAPI.transQuery(loc, mode="TimelineSourceCountry"),
-                         mode="TimelineSourceCountry"), loc, base, inter=inter)
+        analyzer.getInfo(gdeltAPI.transQuery(location, mode="TimelineSourceCountry"),
+                         mode="TimelineSourceCountry"), location, base, inter=inter)

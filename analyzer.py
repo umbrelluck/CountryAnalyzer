@@ -74,7 +74,7 @@ def compareInterest(interest, loc, default, inter=False):
     for key, value in maxs.items():
         # CHANGE 5!!!!
         try:
-            if loc in value[0][0] and (
+            if loc in value[0][0].lower() and (
                     (value[0][1] - value[1][1]) - (value[1][1] - value[2][1])) > 5:
                 count += 1
         except IndexError:
