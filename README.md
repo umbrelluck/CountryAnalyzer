@@ -10,3 +10,5 @@ python main.py
 Перед використанням переконайтеся, що у вас встановлені бібліотеки ```json```, ```datetime```, `sys`, `urllib.request`, `copy`.
 
 У разі відсутності певної бібліотеки `pip install <ім'я бібліотеки>`
+
+Детальніше тут: https://github.com/umbrelluck/CountryAnalyzer/wiki
