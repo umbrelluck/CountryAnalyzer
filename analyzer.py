@@ -74,7 +74,7 @@ def compareInterest(interest, loc, default, inter=False):
     for key, value in maxs.items():
         # CHANGE 5!!!!
         try:
-            if loc in value[0][0].lower() and (
+            if loc.lower() in value[0][0].lower() and (
                     (value[0][1] - value[1][1]) - (value[1][1] - value[2][1])) > 5:
                 count += 1
         except IndexError:
@@ -87,7 +87,7 @@ def compareInterest(interest, loc, default, inter=False):
 if __name__ == "__main__":
     import gdeltAPI
 
-    res = getInfo(gdeltAPI.transQuery("Belgium", mode="TimelineSourceCountry"),
-                  mode="TimelineSourceCountry")
-    tmp = compareInterest(res, "Belgium", default=(0, 0.1))
+    qu = gdeltAPI.transQuery("Belgium", mode="TimelineSourceCountry")
+    res = getInfo(qu, mode="TimelineSourceCountry")
+    tmp = compareInterest(res, "Belgium", inter=True, default=(0, 0.1))
     print(tmp)

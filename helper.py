@@ -14,8 +14,8 @@ def tone_chart(loc=None):
     :return: tuple/list
     """
     global location
-    if not location:
-        location = loc if loc else gdeltAPI.getLocation()
+    # if not location:
+    location = loc if loc else gdeltAPI.getLocation()
     return analyzer.getInfo(gdeltAPI.transQuery(location))
 
 
@@ -28,8 +28,14 @@ def timeline_source_country(loc=None, inter=False, base=(0, 0.1)):
     :return: bool/int
     """
     global location
-    if not location:
-        location = loc if loc else gdeltAPI.getLocation()
+    # if not location:
+    location = loc if loc else gdeltAPI.getLocation()
     return analyzer.compareInterest(
         analyzer.getInfo(gdeltAPI.transQuery(location, mode="TimelineSourceCountry"),
                          mode="TimelineSourceCountry"), location, base, inter=inter)
+
+
+if __name__ == "__main__":
+    neg, neu, pos = tone_chart(loc="Brunei")
+    inte = timeline_source_country(loc="Brunei", inter=True)
+    print(neg, neu, pos, inte)
