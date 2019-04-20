@@ -63,7 +63,7 @@ def transQuery(query, mode="tonechart", themes=[None]):
                 query += "%20" + query
             else:
                 break
-        request_result = json.loads(request_result)
+        request_result = json.loads(request_result, strict=False)
         if mode == "tonechart":
             yield request_result[mode]
         else:

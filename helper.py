@@ -29,7 +29,7 @@ def timeline_source_country(loc=None, inter=False, base=(0, 0.1)):
     """
     global location
     # if not location:
-    location = loc if loc else gdeltAPI.getLocation()
+    location = loc if loc else location if location else gdeltAPI.getLocation()
     return analyzer.compareInterest(
         analyzer.getInfo(gdeltAPI.transQuery(location, mode="TimelineSourceCountry"),
                          mode="TimelineSourceCountry"), location, base, inter=inter)
