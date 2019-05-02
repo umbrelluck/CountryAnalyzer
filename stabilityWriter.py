@@ -28,12 +28,17 @@ try:
             print("Yor data is seemed to be outdated. Would you like to update it? [Y/n]")
             ans = input(" >>> ")
             if ans in ["y", "Y", ""]:
-                stability = get_stability()
-                print("Data is updated")
+                raise EOFError
             else:
                 stability = json.loads(stability_file.readline())
         else:
             stability = json.loads(stability_file.readline())
+except EOFError:
+    with open("databases/stability.txt", "w") as stability_file:
+        stability_file.write(datetime.datetime.now().strftime("%U") + '\n')
+        stability = get_stability()
+        json.dump(stability, stability_file)
+        print("Data is updated")
 except Exception:
     with open("databases/stability.txt", "w") as stability_file:
         print("It seems you don`t have required data. Would you like to upload it? [Y/n]")
