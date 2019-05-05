@@ -7,6 +7,27 @@ import analyzer
 location = ""
 
 
+def negative_news_count(loc=None, topics=[None]):
+    """
+    Counts the number of negative news on topics in themes
+    :param loc: str
+    :param topics: list/tuple
+    :return: dict
+    """
+    count_by_topic, i = {}, 0
+    global location
+    location = location if location else loc
+    location = location if location else gdeltAPI.getLocation()
+    for news in gdeltAPI.transQuery(location, themes=topics):
+        count = 0
+        for elem in news:
+            if elem['bin'] < -1:
+                count += 1
+        count_by_topic[topics[i]] = count
+        i += 1
+    return count_by_topic
+
+
 def tone_chart(loc=None):
     """
     Easier analyzer.getInfo()

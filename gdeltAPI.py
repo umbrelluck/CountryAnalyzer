@@ -38,9 +38,11 @@ def getLocation():
         print(
             "Your input is incorrect or we can`t find such location.\nIf you are sure everything "
             "is ""right, press \'Enter\'")
-        location = input(" ==> ").lower()
-        if location == "":
+        ans = input(" ==> ").lower()
+        if ans == "":
             break
+        else:
+            location = ans
     return location
 
 
