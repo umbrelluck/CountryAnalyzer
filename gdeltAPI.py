@@ -56,20 +56,24 @@ def transQuery(query, mode="tonechart", themes=[None]):
     """
     query = query.replace(" ", "%20")
     for theme in themes:
-        tmp_theme = "theme:" + theme if theme else ""
+        tmp_theme = "%20theme:" + theme if theme else ""
         while True:
             requestURL = baseURL + '\"' + query + '\"' + tmp_theme + "&mode=" + mode + \
-                         "&format=json"
-            request_result = urllib.request.urlopen(requestURL).read().decode("utf-8")
+                "&format=json"
+            request_result = urllib.request.urlopen(
+                requestURL).read().decode("utf-8")
             if "phrase is too short" in request_result:
                 query += "%20" + query
             else:
                 break
         request_result = json.loads(request_result, strict=False)
-        if mode == "tonechart":
-            yield request_result[mode]
-        else:
-            yield request_result["timeline"]
+        try:
+            if mode == "tonechart":
+                yield request_result[mode]
+            else:
+                yield request_result["timeline"]
+        except KeyError:
+            yield None
 
 
 if __name__ == "__main__":

@@ -1,3 +1,4 @@
+"""Module for working with saved data"""
 from country import CountriesADT
 import datetime
 import json
@@ -5,6 +6,10 @@ import sys
 
 
 def get_stability():
+    """
+    Creates CountriesADT and for all countries there calculates their average data
+    :return: dict
+    """
     best_countries = ["Grenada", "Brunei", "Seychelles", "Kuwait", "Antigua and Barbuda",
                       "Montenegro", "Greece", "Mongolia", "Trinidad and Tobago", "Oman",
                       "Bulgaria",
@@ -24,8 +29,9 @@ def get_stability():
 try:
     with open("databases/stability.txt", "r") as stability_file:
         now = int(datetime.datetime.now().strftime("%U"))
-        if now - int(stability_file.readline()) > 1:
-            print("Yor data is seemed to be outdated. Would you like to update it? [Y/n]")
+        if now - int(stability_file.readline()) > 0:
+            print(
+                "Yor data is seemed to be outdated. Would you like to update it? [Y/n]")
             ans = input(" >>> ")
             if ans in ["y", "Y", ""]:
                 raise EOFError
@@ -41,7 +47,8 @@ except EOFError:
         print("Data is updated")
 except Exception:
     with open("databases/stability.txt", "w") as stability_file:
-        print("It seems you don`t have required data. Would you like to upload it? [Y/n]")
+        print(
+            "It seems you don`t have required data. Would you like to upload it? [Y/n]")
         ans = input(" >>> ")
         if ans in ["y", "Y", ""]:
             stability_file.write(datetime.datetime.now().strftime("%U") + '\n')

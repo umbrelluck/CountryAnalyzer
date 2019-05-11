@@ -5,7 +5,13 @@ from helper import tone_chart, timeline_source_country
 
 
 class CountriesADT:
+    """ADT for countries"""
+
     def __init__(self, stable_countries_names):
+        """
+        Initialization of the class
+        :param stable_countries_names: list
+        """
         self.countries = []
         self._stable(stable_countries_names)
 
@@ -19,7 +25,11 @@ class CountriesADT:
         return self.countries.__iter__()
 
     def _stable(self, stable_countries_name):
-        """Fills ADT with countries"""
+        """
+        Fills ADT with countries
+        :param stable_countries_name: list
+        :return: None
+        """
         print("Pre-analyzing world, this can take up to 20 minutes...\n")
         for country in stable_countries_name:
             print(country + ": status - started", end="")
@@ -34,8 +44,8 @@ class CountriesADT:
 
     def stability(self):
         """
-        Calculate stable stats
-        :return: list
+        Calculates stable stats
+        :return: dict
         """
         mood, inter = [0, 0, 0], 0
         for country in self:
@@ -63,6 +73,3 @@ class Country:
         self.name = name
         self.emotions = [negative, neutral, positive]
         self.interest = interest
-
-
-
