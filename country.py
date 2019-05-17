@@ -1,5 +1,5 @@
 """
-Module with country class and functions to calculate stable stat
+Module with country class and functions to calculate stable stats
 """
 from helper import tone_chart, timeline_source_country
 

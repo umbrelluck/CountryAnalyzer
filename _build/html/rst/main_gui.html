@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>main_gui module &#8212; Country Analyzer 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="main module" href="main_console.html" />
+    <link rel="prev" title="Welcome to CountryAnalyzer’s documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-main_gui">
+<span id="main-gui-module"></span><h1>main_gui module<a class="headerlink" href="#module-main_gui" title="Permalink to this headline">¶</a></h1>
+<p>Main module with GUI
+IMPORTANT: run main_gui from with_GUI folder</p>
+<dl class="class">
+<dt id="main_gui.IncorrectLocationPage">
+<em class="property">class </em><code class="descclassname">main_gui.</code><code class="descname">IncorrectLocationPage</code><span class="sig-paren">(</span><em>parent</em>, <em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.IncorrectLocationPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Frame</span></code></p>
+<p>The page with warnings about the input</p>
+<dl class="method">
+<dt id="main_gui.IncorrectLocationPage.result">
+<code class="descname">result</code><span class="sig-paren">(</span><em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.IncorrectLocationPage.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows result window
+:param controller: Main class instance
+:return: None</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="main_gui.Main">
+<em class="property">class </em><code class="descclassname">main_gui.</code><code class="descname">Main</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.Main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Tk</span></code></p>
+<p>Container for program windows</p>
+<dl class="method">
+<dt id="main_gui.Main.resize">
+<code class="descname">resize</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.Main.resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resize the window for better outlook, NotImplemented
+:param x:
+:param y:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main_gui.Main.show_frame">
+<code class="descname">show_frame</code><span class="sig-paren">(</span><em>container</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.Main.show_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows new window
+:param container: class of the window (StartPage, IncorrectLocationPAge, ResultPage)
+:return: None</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="main_gui.ResultPage">
+<em class="property">class </em><code class="descclassname">main_gui.</code><code class="descname">ResultPage</code><span class="sig-paren">(</span><em>parent</em>, <em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.ResultPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Frame</span></code></p>
+<p>Page with results of analysis</p>
+<dl class="method">
+<dt id="main_gui.ResultPage.change">
+<code class="descname">change</code><span class="sig-paren">(</span><em>controller</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.ResultPage.change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the general results
+:param controller: ResultPage instance
+:param text: str
+:return: None</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main_gui.ResultPage.detailed_search">
+<code class="descname">detailed_search</code><span class="sig-paren">(</span><em>country_name</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.ResultPage.detailed_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates widget with detailed search results
+:param country_name: str
+:return: None</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main_gui.ResultPage.to_main">
+<code class="descname">to_main</code><span class="sig-paren">(</span><em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.ResultPage.to_main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns to start page
+:param controller: Main class instance
+:return: ТЩту</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main_gui.ResultPage.url_open">
+<code class="descname">url_open</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.ResultPage.url_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens url in default`s browser new tab
+:param url: str
+:return: None</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main_gui.ResultPage.visit_news">
+<code class="descname">visit_news</code><span class="sig-paren">(</span><em>listbox</em>, <em>lst</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.ResultPage.visit_news" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables visiting selected website
+:param listbox: tk.listbox
+:param lst: list
+:return: None</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="main_gui.StartPage">
+<em class="property">class </em><code class="descclassname">main_gui.</code><code class="descname">StartPage</code><span class="sig-paren">(</span><em>parent</em>, <em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.StartPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Frame</span></code></p>
+<p>Start page with basic information</p>
+<dl class="method">
+<dt id="main_gui.StartPage.check_stability">
+<code class="descname">check_stability</code><span class="sig-paren">(</span><em>input_text</em>, <em>parent</em>, <em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.StartPage.check_stability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the country name and starts analyzing
+:param input_text: listbox_text object
+:param parent: for further use, not implemented right now
+:param controller: Main instance
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main_gui.StartPage.result">
+<code class="descname">result</code><span class="sig-paren">(</span><em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.StartPage.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows result window
+:param controller: Main class instance
+:return: None</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="main_gui.negative_news_count_output">
+<code class="descclassname">main_gui.</code><code class="descname">negative_news_count_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.negative_news_count_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nice print of negative_news_count</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="main_gui.search">
+<code class="descclassname">main_gui.</code><code class="descname">search</code><span class="sig-paren">(</span><em>location</em><span class="sig-paren">)</span><a class="headerlink" href="#main_gui.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>General stability analysis
+:param location:
+:return:</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Country Analyzer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">main_gui module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_console.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stabilityWriter.html">stabilityWriter module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzer.html">analyzer module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gdeltAPI.html">gdeltAPI module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helper.html">helper module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_countriesADT.html">test_countriesADT module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Welcome to CountryAnalyzer’s documentation!</a></li>
+      <li>Next: <a href="main_console.html" title="next chapter">main module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Yaroslav Borys.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/main_gui.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>gdeltAPI module &#8212; Country Analyzer 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="helper module" href="helper.html" />
+    <link rel="prev" title="analyzer module" href="analyzer.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-gdeltAPI">
+<span id="gdeltapi-module"></span><h1>gdeltAPI module<a class="headerlink" href="#module-gdeltAPI" title="Permalink to this headline">¶</a></h1>
+<p>module for working with GDELT API</p>
+<dl class="function">
+<dt id="gdeltAPI.getLocation">
+<code class="descclassname">gdeltAPI.</code><code class="descname">getLocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gdeltAPI.getLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>User interface for getting city or country
+:return: string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gdeltAPI.is_validLocation">
+<code class="descclassname">gdeltAPI.</code><code class="descname">is_validLocation</code><span class="sig-paren">(</span><em>loc</em><span class="sig-paren">)</span><a class="headerlink" href="#gdeltAPI.is_validLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given country or city, checks whether such exists
+:param loc: string
+:return: bool</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gdeltAPI.transQuery">
+<code class="descclassname">gdeltAPI.</code><code class="descname">transQuery</code><span class="sig-paren">(</span><em>query, mode='tonechart', themes=[None]</em><span class="sig-paren">)</span><a class="headerlink" href="#gdeltAPI.transQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given city or country, display mode and themes returns generator of charts
+:param query: string
+:param mode: string
+:param themes: list
+:return: generator</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Country Analyzer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main_gui.html">main_gui module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main_console.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stabilityWriter.html">stabilityWriter module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzer.html">analyzer module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">gdeltAPI module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helper.html">helper module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_countriesADT.html">test_countriesADT module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="analyzer.html" title="previous chapter">analyzer module</a></li>
+      <li>Next: <a href="helper.html" title="next chapter">helper module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Yaroslav Borys.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/gdeltAPI.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

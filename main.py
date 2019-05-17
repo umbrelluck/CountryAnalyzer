@@ -47,3 +47,8 @@ if __name__ == "__main__":
             print('Your county is stable with rather positive feedback.')
         else:
             print('Your county is stable with rather negative feedback.')
+
+# ..automodule:: country
+# :members:
+# :undoc - members:
+# :show - inheritance:
