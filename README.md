@@ -26,6 +26,10 @@
 git clone https://github.com/umbrelluck/CountryAnalyzer.git
 cd CountryAnalyzer/
 python main.py
+
+#with gui
+cd CountryAnalyzer/with_GUI
+python main_gui.py
 ````
 Перед використанням переконайтеся, що у вас встановлені бібліотеки ```json```, ```datetime```, `sys`, `urllib.request`, `copy`.
 
