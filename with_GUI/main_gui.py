@@ -258,7 +258,7 @@ def search(location):
     base = stability["interest"]
     interest = timeline_source_country(base=(base, 0.1))
     # print(interest)
-    if (interest or stability['mood'][0] - neg > 0.3) or stability['mood'][0] - neg > 0.3:
+    if (interest and stability['mood'][0] - neg > 0.17) or stability['mood'][0] - neg > 0.17:
         return 'your country seems to be unstable.'
     else:
         if abs(stability['mood'][0] - neg) < 0.1:

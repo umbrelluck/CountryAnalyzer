@@ -32,7 +32,7 @@ if __name__ == "__main__":
     base = stability["interest"]
     interest = timeline_source_country(base=(base, 0.1))
     # print(interest)
-    if (interest or stability['mood'][0] - neg > 0.3) or stability['mood'][0] - neg > 0.3:
+    if (interest and stability['mood'][0] - neg > 0.17) or stability['mood'][0] - neg > 0.17:
         print(
             'Your country seems to be unstable. Would you like to get more information about it? '
             '[Y/n]')
