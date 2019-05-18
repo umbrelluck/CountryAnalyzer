@@ -1,0 +1,8 @@
+README.md
+setup.py
+CountryAnalyzer.egg-info/PKG-INFO
+CountryAnalyzer.egg-info/SOURCES.txt
+CountryAnalyzer.egg-info/dependency_links.txt
+CountryAnalyzer.egg-info/not-zip-safe
+CountryAnalyzer.egg-info/requires.txt
+CountryAnalyzer.egg-info/top_level.txt
