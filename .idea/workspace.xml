@@ -353,7 +353,7 @@
       <workItem from="1557912721133" duration="2467000" />
       <workItem from="1558023051224" duration="10502000" />
       <workItem from="1558163701266" duration="7527000" />
-      <workItem from="1558192300382" duration="970000" />
+      <workItem from="1558192300382" duration="1577000" />
     </task>
     <task id="LOCAL-00001" summary="Added country class and edited the way of getting data">
       <created>1551523107258</created>
@@ -389,7 +389,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147995000" />
+    <option name="totallyTimeSpent" value="148602000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -402,7 +402,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49512196" visible="true" weight="0.32250756" />
       <window_info id="Structure" order="1" sideWeight="0.50487804" side_tool="true" weight="0.24848942" />
